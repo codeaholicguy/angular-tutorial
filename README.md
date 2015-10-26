@@ -1,2 +1,2 @@
 # angular-tutorial
-All my angular tutorial on my Blog
+All my angular tutorials on my Blog. See at https://codeaholicguy.wordpress.com/
