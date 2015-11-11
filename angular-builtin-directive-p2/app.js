@@ -11,22 +11,52 @@
 
     var products = [
         {
-            name: 'Apple iPad Air 2 64G',
+            name: 'Apple iPad Air 2 Wifi/4G 16G',
             price: 499,
-            description: 'Apple iPad Air 2 ra mắt là chiếc máy tính bảng 9.7 inch mỏng và nhẹ nhất hiện nay',
-            inStock: true
+            description: 'Một bước ngoặt trong thiết kế của Apple  vừa tinh tế, vừa sang trọng và thời thượng và những cải tiến đáng giá. Apple iPad Air 2 ra mắt là chiếc máy tính bảng 9.7 inch mỏng và nhẹ nhất hiện nay',
+            inStock: true,
+            images: [
+                {
+                    full: "images/ipad.png",
+                    thumb: "images/ipad.png"
+                },
+                {
+                    full: "images/ipad.png",
+                    thumb: "images/ipad.png"
+                }
+            ]
         },
         {
-            name: 'Apple iPhone 6s',
+            name: 'Apple iPad Air 2 Wifi/4G 64G',
             price: 599,
-            description: 'Một bước ngoặt trong thiết kế của Apple  vừa tinh tế, vừa sang trọng và thời thượng và những cải tiến đáng giá',
-            inStock: false
+            description: 'Một bước ngoặt trong thiết kế của Apple  vừa tinh tế, vừa sang trọng và thời thượng và những cải tiến đáng giá. Apple iPad Air 2 ra mắt là chiếc máy tính bảng 9.7 inch mỏng và nhẹ nhất hiện nay',
+            inStock: true,
+            images: [
+                {
+                    full: "images/ipad.png",
+                    thumb: "images/ipad.png"
+                },
+                {
+                    full: "images/ipad.png",
+                    thumb: "images/ipad.png"
+                }
+            ]
         },
         {
-            name: 'Apple iPhone 6s Plus',
+            name: 'Apple iPad Air 2 Wifi/4G 128G',
             price: 699,
-            description: 'Một bước ngoặt trong thiết kế của Apple  vừa tinh tế, vừa sang trọng và thời thượng và những cải tiến đáng giá',
-            inStock: true
+            description: 'Một bước ngoặt trong thiết kế của Apple  vừa tinh tế, vừa sang trọng và thời thượng và những cải tiến đáng giá. Apple iPad Air 2 ra mắt là chiếc máy tính bảng 9.7 inch mỏng và nhẹ nhất hiện nay',
+            inStock: true,
+            images: [
+                {
+                    full: "images/ipad.png",
+                    thumb: "images/ipad.png"
+                },
+                {
+                    full: "images/ipad.png",
+                    thumb: "images/ipad.png"
+                }
+            ]
         }
     ]
 
