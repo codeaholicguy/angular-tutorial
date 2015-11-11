@@ -13,8 +13,8 @@
 
 <div class="container">
     <div class="page-header"></div>
-    <div class="panel panel-default col-md-5" ng-controller="StoreController as store">
-        <div class="panel-body" ng-repeat="product in store.products">
+    <div class="panel panel-default col-md-12" ng-controller="StoreController as store">
+        <div class="panel-body col-md-4" ng-repeat="product in store.products">
             <h1>{{product.name}}</h1>
 
             <h2>$ {{product.price}}</h2>
