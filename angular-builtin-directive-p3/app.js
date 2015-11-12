@@ -9,6 +9,18 @@
         this.products = products;
     });
 
+    app.controller('PanelController', function () {
+        this.tab = 'description';
+
+        this.setTab = function (tab) {
+            this.tab = tab;
+        };
+
+        this.isSelected = function (tab) {
+            return this.tab === tab;
+        }
+    });
+
     var products = [
         {
             name: 'Apple iPad Air 2 Wifi/4G 16G',
