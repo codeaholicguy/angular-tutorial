@@ -1,0 +1,63 @@
+/**
+ * Created by hoangnn on 29/10/2015.
+ */
+(function () {
+
+    var app = angular.module('Store', []);
+
+    app.controller('StoreController', function () {
+        this.products = products;
+    });
+
+    var products = [
+        {
+            name: 'Apple iPad Air 2 Wifi/4G 16G',
+            price: 499,
+            description: 'Một bước ngoặt trong thiết kế của Apple  vừa tinh tế, vừa sang trọng và thời thượng và những cải tiến đáng giá. Apple iPad Air 2 ra mắt là chiếc máy tính bảng 9.7 inch mỏng và nhẹ nhất hiện nay',
+            inStock: true,
+            images: [
+                {
+                    full: "images/ipad.png",
+                    thumb: "images/ipad.png"
+                },
+                {
+                    full: "images/ipad.png",
+                    thumb: "images/ipad.png"
+                }
+            ]
+        },
+        {
+            name: 'Apple iPad Air 2 Wifi/4G 64G',
+            price: 599,
+            description: 'Một bước ngoặt trong thiết kế của Apple  vừa tinh tế, vừa sang trọng và thời thượng và những cải tiến đáng giá. Apple iPad Air 2 ra mắt là chiếc máy tính bảng 9.7 inch mỏng và nhẹ nhất hiện nay',
+            inStock: true,
+            images: [
+                {
+                    full: "images/ipad.png",
+                    thumb: "images/ipad.png"
+                },
+                {
+                    full: "images/ipad.png",
+                    thumb: "images/ipad.png"
+                }
+            ]
+        },
+        {
+            name: 'Apple iPad Air 2 Wifi/4G 128G',
+            price: 699,
+            description: 'Một bước ngoặt trong thiết kế của Apple  vừa tinh tế, vừa sang trọng và thời thượng và những cải tiến đáng giá. Apple iPad Air 2 ra mắt là chiếc máy tính bảng 9.7 inch mỏng và nhẹ nhất hiện nay',
+            inStock: true,
+            images: [
+                {
+                    full: "images/ipad.png",
+                    thumb: "images/ipad.png"
+                },
+                {
+                    full: "images/ipad.png",
+                    thumb: "images/ipad.png"
+                }
+            ]
+        }
+    ]
+
+})();
