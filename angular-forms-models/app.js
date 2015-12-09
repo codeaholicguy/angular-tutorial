@@ -36,6 +36,18 @@
                     full: "images/ipad.png",
                     thumb: "images/ipad.png"
                 }
+            ],
+            reviews: [
+                {
+                    stars: 5,
+                    body: "I love this product!",
+                    author: "hoangn@codeaholicguy.com"
+                },
+                {
+                    stars: 1,
+                    body: "This product sucks",
+                    author: "bob@hater.com"
+                }
             ]
         },
         {
