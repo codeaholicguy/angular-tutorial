@@ -21,6 +21,14 @@
         }
     });
 
+    app.controller("ReviewController", function () {
+        this.review = {};
+
+        this.addReview = function (product) {
+            product.reviews.push(this.review);
+        };
+    });
+
     var products = [
         {
             name: 'Apple iPad Air 2 Wifi/4G 16G',
