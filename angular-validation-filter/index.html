@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html ng-app="Store">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>angular-controller-example</title>
+
+    <!-- Vendor -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Store</h1>
+    </div>
+    <div class="panel panel-default" ng-controller="StoreController as store">
+        <div class="panel-body" ng-repeat="product in store.products">
+            <h1>{{product.name}}</h1>
+
+            <div class="thumbnail">
+                <img ng-src="{{product.images[0].thumb}}">
+            </div>
+
+            <h2>$ {{product.price}}</h2>
+
+            <button class="btn btn-primary" ng-show="product.inStock">Thêm vào giỏ</button>
+
+            <hr>
+            <section ng-controller="PanelController as panel">
+                <ul class="nav nav-pills">
+                    <li ng-class="{active:panel.isSelected('description')}">
+                        <a ng-click="panel.setTab('description')" href>Giới thiệu</a>
+                    </li>
+                    <li ng-class="{active:panel.isSelected('specification')}">
+                        <a ng-click="panel.setTab('specification')" href>Cấu hình</a>
+                    </li>
+                    <li ng-class="{active:panel.isSelected('review')}">
+                        <a ng-click="panel.setTab('review')" href>Đánh giá</a>
+                    </li>
+                </ul>
+                <div class="panel" ng-show="panel.isSelected('description')">
+                    <h4>Giới thiệu</h4>
+
+                    <p>{{product.description}}</p>
+                </div>
+                <div class="panel" ng-show="panel.isSelected('specification')">
+                    <h4>Cấu hình</h4>
+
+                    <p>None yet</p>
+                </div>
+                <div class="panel" ng-show="panel.isSelected('review')">
+                    <h4>Đánh giá</h4>
+
+                    <blockquote ng-repeat="review in product.reviews">
+                        <b>{{review.stars}} star(s)</b>
+                        {{review.body}}
+                        <cite>- {{review.author}}</cite>
+                    </blockquote>
+
+                    <form class="form-horizontal" name="reviewForm"
+                          ng-controller="ReviewController as reviewCtrl"
+                          ng-submit="reviewCtrl.addReview(product)">
+                        <blockquote>
+                            <b>{{reviewCtrl.review.stars}} star(s)</b>
+                            {{reviewCtrl.review.body}}
+                            <cite>- {{reviewCtrl.review.author}}</cite>
+                        </blockquote>
+
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">Email</label>
+                            <div class="col-sm-6">
+                                <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">Review</label>
+                            <div class="col-sm-6">
+                                <textarea ng-model="reviewCtrl.review.body" class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">Star</label>
+                            <div class="col-sm-6">
+                                <select ng-model="reviewCtrl.review.stars" class="form-control">
+                                    <option value="1">1 star</option>
+                                    <option value="2">2 stars</option>
+                                    <option value="3">3 stars</option>
+                                    <option value="4">4 stars</option>
+                                    <option value="5">5 stars</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-1 col-sm-10">
+                                <button type="submit" class="btn btn-default">Gửi</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- Vendor -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+<!-- Application -->
+<script src="app.js"></script>
+</body>
+</html>
