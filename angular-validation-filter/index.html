@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
           integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
           crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -23,7 +24,7 @@
                 <img ng-src="{{product.images[0].thumb}}">
             </div>
 
-            <h2>$ {{product.price}}</h2>
+            <h2>{{product.price | currency}}</h2>
 
             <button class="btn btn-primary" ng-show="product.inStock">Thêm vào giỏ</button>
 
@@ -61,7 +62,7 @@
 
                     <form class="form-horizontal" name="reviewForm"
                           ng-controller="ReviewController as reviewCtrl"
-                          ng-submit="reviewCtrl.addReview(product)">
+                          ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
                         <blockquote>
                             <b>{{reviewCtrl.review.stars}} star(s)</b>
                             {{reviewCtrl.review.body}}
@@ -71,19 +72,19 @@
                         <div class="form-group">
                             <label class="col-sm-1 control-label">Email</label>
                             <div class="col-sm-6">
-                                <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="Email">
+                                <input ng-model="reviewCtrl.review.author" type="email" class="form-control ng-pristine ng-invalid" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-1 control-label">Review</label>
                             <div class="col-sm-6">
-                                <textarea ng-model="reviewCtrl.review.body" class="form-control" rows="3"></textarea>
+                                <textarea ng-model="reviewCtrl.review.body" class="form-control" rows="3" required></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-1 control-label">Star</label>
                             <div class="col-sm-6">
-                                <select ng-model="reviewCtrl.review.stars" class="form-control">
+                                <select ng-model="reviewCtrl.review.stars" class="form-control" required>
                                     <option value="1">1 star</option>
                                     <option value="2">2 stars</option>
                                     <option value="3">3 stars</option>
