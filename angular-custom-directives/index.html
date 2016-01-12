@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="Store">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>angular-controller-example</title>
+
+    <!-- Vendor -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Store</h1>
+    </div>
+    <div class="panel panel-default" ng-controller="StoreController as store">
+        <div class="panel-body" ng-repeat="product in store.products">
+            <!--<h1 ng-include="'product-title.html'">-->
+            <!--</h1>-->
+            <h1>
+                <product-title></product-title>
+            </h1>
+
+            <div class="thumbnail">
+                <img ng-src="{{product.images[0].thumb}}">
+            </div>
+
+            <button class="btn btn-primary" ng-show="product.inStock">Thêm vào giỏ</button>
+
+            <hr>
+            <product-panels></product-panels>
+        </div>
+    </div>
+</div>
+
+<!-- Vendor -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+<!-- Application -->
+<script src="app.js"></script>
+</body>
+</html>
