@@ -1,0 +1,77 @@
+<section>
+    <ul class="nav nav-pills">
+        <li ng-class="{active:panel.isSelected('description')}">
+            <a ng-click="panel.setTab('description')" href>Giới thiệu</a>
+        </li>
+        <li ng-class="{active:panel.isSelected('specification')}">
+            <a ng-click="panel.setTab('specification')" href>Cấu hình</a>
+        </li>
+        <li ng-class="{active:panel.isSelected('review')}">
+            <a ng-click="panel.setTab('review')" href>Đánh giá</a>
+        </li>
+    </ul>
+    <div class="panel" ng-show="panel.isSelected('description')">
+        <h4>Giới thiệu</h4>
+
+        <p>{{product.description}}</p>
+    </div>
+    <div class="panel" ng-show="panel.isSelected('specification')">
+        <h4>Cấu hình</h4>
+
+        <p>None yet</p>
+    </div>
+    <div class="panel" ng-show="panel.isSelected('review')">
+        <h4>Đánh giá</h4>
+
+        <blockquote ng-repeat="review in product.reviews">
+            <b>{{review.stars}} star(s)</b>
+            {{review.body}}
+            <cite>- {{review.author}}</cite>
+        </blockquote>
+
+        <form class="form-horizontal" name="reviewForm"
+              ng-controller="ReviewController as reviewCtrl"
+              ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+            <blockquote>
+                <b>{{reviewCtrl.review.stars}} star(s)</b>
+                {{reviewCtrl.review.body}}
+                <cite>- {{reviewCtrl.review.author}}</cite>
+            </blockquote>
+
+            <div class="form-group">
+                <label class="col-sm-1 control-label">Email</label>
+
+                <div class="col-sm-6">
+                    <input ng-model="reviewCtrl.review.author" type="email"
+                           class="form-control ng-pristine ng-invalid" placeholder="Email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-1 control-label">Review</label>
+
+                <div class="col-sm-6">
+                                <textarea ng-model="reviewCtrl.review.body" class="form-control" rows="3"
+                                          required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-1 control-label">Star</label>
+
+                <div class="col-sm-6">
+                    <select ng-model="reviewCtrl.review.stars" class="form-control" required>
+                        <option value="1">1 star</option>
+                        <option value="2">2 stars</option>
+                        <option value="3">3 stars</option>
+                        <option value="4">4 stars</option>
+                        <option value="5">5 stars</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-10">
+                    <button type="submit" class="btn btn-default">Gửi</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
