@@ -5,8 +5,8 @@ All angular tutorials for beginner source code on [Codeaholicguy Blog](https://c
 
 [See more](https://codeaholicguy.wordpress.com/category/angularjs/)
 
-Lession
--------
+Lessions
+--------
 
 1. [Introduction Directive, Module, Expression](https://codeaholicguy.com/2015/10/27/series-angularjs-hay-ho-directive-module-expression/)
 2. [Controller](https://codeaholicguy.com/2015/10/29/series-angularjs-hay-ho-controller/)
