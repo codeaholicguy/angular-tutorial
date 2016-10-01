@@ -2,7 +2,8 @@ Angular for beginner
 --------------------
 
 All angular tutorials for beginner source code on [Codeaholicguy Blog](https://codeaholicguy.com/).
-See more at https://codeaholicguy.wordpress.com/category/angularjs/
+
+[See more](https://codeaholicguy.wordpress.com/category/angularjs/)
 
 Lession
 -------
