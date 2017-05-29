@@ -1,4 +1,4 @@
-Angular for beginner
+Angular for beginner (Vietnamese)
 --------------------
 
 All angular tutorials for beginner source code on [Codeaholicguy Blog](https://codeaholicguy.com/).
